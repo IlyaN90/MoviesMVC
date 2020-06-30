@@ -1,0 +1,41 @@
+﻿@model IlyasCovidMovieMadness.ViewModels.PostCommentViewModel
+
+<h2>Posts</h2>
+
+
+@foreach (var item in Model.Posts)
+{
+    string selectedRow = "";
+    if (item.PostId == ViewBag.PostID)
+    {
+        selectedRow = "success";
+    }
+    <div class="@selectedRow">
+        <div class="panel panel-info">
+            <h3 class="panel-title">@item.MovieTitle</h3>
+        </div>
+    </div>
+    @Html.Partial("_PostSummary", item)
+}
+
+
+
+
+@if (Model.Comments != null)
+{
+    <h3>User comments:</h3>
+    <table class="table" id="comments">
+        @foreach (var item in Model.Comments)
+        {
+            string selectedRow = "";
+            if (item.CommentId == ViewBag.commentId)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                @Html.Partial("_CommentSummary", item)
+            </tr>
+        }
+
+    </table>
+}

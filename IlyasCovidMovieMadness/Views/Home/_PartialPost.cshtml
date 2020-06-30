@@ -1,0 +1,20 @@
+﻿@model IlyasCovidMovieMadness.ViewModels.PostPartialViewModel
+<h4>Last edited: @Model.Post.DateEdited.ToString("dddd , MMM dd yyyy,hh:mm")</h4>
+
+<div class="container">
+    <div>
+        @Html.DisplayNameFor(model => model.Post.PostRating)
+        @Html.DisplayFor(model => model.Post.PostRating)
+        @Html.DisplayFor(model => model.Post.DateEdited)
+        <div>
+            @Html.DisplayFor(model => model.Post.Text)
+        </div>
+        Avarage Raiting >>> @Model.AvarageRaiting
+    </div>
+    <div class="panel-body">
+        @Html.ActionLink("Edit", "Edit", "Posts", new { id = Model.Post.PostId }, null)
+        @Html.ActionLink("Details", "Details", "Posts", new { id = Model.Post.PostId }, null)
+        @Html.ActionLink("Delete", "Delete", "Posts", new { id = Model.Post.PostId }, null)
+    </div>
+</div>
+

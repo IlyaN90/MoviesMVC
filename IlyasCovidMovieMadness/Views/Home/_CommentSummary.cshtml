@@ -1,0 +1,20 @@
+﻿@model IlyasCovidMovieMadness.Models.Comment
+<h4>Last edited: @Model.DateEdited.ToString("dddd , MMM dd yyyy,hh:mm")</h4>
+
+<div class="container">
+    <div>
+        @Html.DisplayNameFor(model => model.UserRatig)
+        @Html.DisplayFor(model => model.UserRatig)
+        @Html.DisplayFor(model => model.UserName)
+        <div>
+            @Html.DisplayFor(model => model.Text)
+        </div>
+    </div>
+    <div class="panel-body">
+        @Html.ActionLink("Edit", "Edit", "Comments", new { id = Model.CommentId }, null) |
+        @Html.ActionLink("Details", "Details", "Comments", new { id = Model.CommentId }, null) |
+        @Html.ActionLink("Delete", "Delete", "Comments", new { id = Model.CommentId }, null) |
+    </div>
+</div>
+
+

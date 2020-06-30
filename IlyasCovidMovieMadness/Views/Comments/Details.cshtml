@@ -1,0 +1,73 @@
+﻿@model IlyasCovidMovieMadness.Models.Comment
+
+@{
+    ViewBag.Title = "Comment Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.MovieTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.MovieTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserRatig)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserRatig)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEdited)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEdited)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentId }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.PostID })
+</p>

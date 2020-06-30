@@ -1,0 +1,30 @@
+﻿@model IlyasCovidMovieMadness.Models.Movie
+<h4>Date released: @Model.ReleaseDate</h4>
+
+<div class="container">
+    <div>
+        <h3>@Model.Description</h3>
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.Post.Text)
+        <div>
+            @Html.DisplayFor(model => model.Post.Text)
+        </div>
+    </div>
+    <div class="panel-body">
+
+        @if (Model.Post == null)
+        {
+            @Html.ActionLink("Add Post", "Create", "Posts", new { id = Model.MovieId }, null)
+        }
+        else
+        {
+            @Html.ActionLink("Edit Review", "Edit", "Posts", new { id = Model.MovieId }, null)
+        }
+        | @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.MovieId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.MovieId })
+    </div>
+</div>
+

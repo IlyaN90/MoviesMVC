@@ -1,0 +1,22 @@
+﻿@model IEnumerable<IlyasCovidMovieMadness.Models.Post>
+
+@{
+    ViewBag.Title = "Post List";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("To Movies", "Index", "Movies", new { id = 1 }, null)
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">@item.MovieTitle</h3>
+        </div>
+    </div>
+
+    @Html.Partial("_PostSummary", item)
+}
